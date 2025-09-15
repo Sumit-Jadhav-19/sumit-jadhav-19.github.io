@@ -1777,3 +1777,14 @@ section,
 .download-cv i {
   font-size: 28px;
 }
+.view-images{
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: #6c757dc5;
+  i{
+    font-size: 20px;
+  }
+}
