@@ -169,7 +169,7 @@ h6 {
   --heading-color: #ffffff;
   color: var(--default-color);
   background-color: #070707;
-  padding: 20px 0;
+  padding: 10px 0;
   transition: all 0.5s;
   z-index: 997;
 }
@@ -225,6 +225,7 @@ h6 {
   }
 
   .navmenu a,
+  .navmenu a:not(:last-child),
   .navmenu a:focus {
     color: var(--nav-color);
     font-size: 15px;
@@ -240,6 +241,7 @@ h6 {
   }
 
   .navmenu a i,
+  .navmenu a:not(:last-child),
   .navmenu a:focus i {
     font-size: 12px;
     line-height: 0;
@@ -573,6 +575,31 @@ h6 {
   bottom: 15px;
 }
 
+.scroll-top1 {
+  background-color: #ffc107 !important;
+  position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  right: 15px;
+  bottom: -15px;
+  z-index: 99999;
+  width: 44px;
+  height: 44px;
+  border-radius: 50px;
+  transition: all 0.4s;
+
+  i {
+    font-size: 28px;
+    color: black;
+  }
+}
+
+.scroll-top1.active {
+  visibility: visible !important;
+  opacity: 1 !important;
+  bottom: 75px !important;
+}
+
 /*--------------------------------------------------------------
 # Disable aos animation delay on mobile devices
 --------------------------------------------------------------*/
@@ -678,7 +705,7 @@ section,
 --------------------------------------------------------------*/
 .hero {
   width: 100%;
-  min-height: calc(100vh - 92px);
+  min-height: calc(100vh - 52px);
   position: relative;
   padding: 60px 0;
   display: flex;
@@ -1735,4 +1762,18 @@ section,
   border-width: 5px;
   border-style: solid;
   border-color: #333 transparent transparent transparent;
+}
+
+.download-cv {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 200px;
+  text-wrap-mode: nowrap;
+  font-weight: bold;
+  justify-content: center;
+}
+
+.download-cv i {
+  font-size: 28px;
 }

@@ -15,15 +15,20 @@
   function toggleScrolled() {
     const selectBody = document.querySelector("body");
     const selectHeader = document.querySelector("#header");
+    const sitename = document.querySelector(".sitename");
     if (
       !selectHeader.classList.contains("scroll-up-sticky") &&
       !selectHeader.classList.contains("sticky-top") &&
       !selectHeader.classList.contains("fixed-top")
     )
       return;
-    window.scrollY > 100
-      ? selectBody.classList.add("scrolled")
-      : selectBody.classList.remove("scrolled");
+    if (window.scrollY > 100) {
+      selectBody.classList.add("scrolled");
+      sitename.classList.remove("d-none");
+    } else {
+      selectBody.classList.remove("scrolled");
+      sitename.classList.add("d-none");
+    }
   }
 
   document.addEventListener("scroll", toggleScrolled);
@@ -96,6 +101,19 @@
 
   window.addEventListener("load", toggleScrollTop);
   document.addEventListener("scroll", toggleScrollTop);
+
+  let scrollTop1 = document.querySelector(".scroll-top1");
+
+  function toggleScrollTop1() {
+    if (scrollTop1) {
+      window.scrollY > 100
+        ? scrollTop1.classList.add("active")
+        : scrollTop1.classList.remove("active");
+    }
+  }
+
+  window.addEventListener("load", toggleScrollTop1);
+  document.addEventListener("scroll", toggleScrollTop1);
 
   /**
    * Animation on scroll function and init
